@@ -14,7 +14,7 @@
     <div class="layout">
         <Layout>
             <Header>
-                <Row type="flex" height='100'>
+                <Row type="flex" height='90'>
                     <Col span="8">
                         <img :src="logourl" alt="" height='50'>
                     </Col>
