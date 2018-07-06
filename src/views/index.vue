@@ -9,7 +9,6 @@
         text-align: center;
         border-radius: 2px;
     }
-
 </style>
 <template>
     <div class="layout">
@@ -73,39 +72,56 @@
                 </Row>
                 <Row type="flex" height="600">
                     <Col span="24">
-                        <div class="box-border">
-                            <h2>我们可以提供xxxx</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat vitae illum soluta aperiam inventore, veniam ullam maxime, laboriosam sint voluptatem et cum obcaecati consequuntur quibusdam culpa quia autem tenetur tempore.</p>
-                        </div>
+                        <Card>
+                            <p slot="title">The standard card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                        </Card>
                     </Col>
                     <Col span="24">
-                        <div class="box-border">
-                            <h2>我们可以提供xxxx</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat vitae illum soluta aperiam inventore, veniam ullam maxime, laboriosam sint voluptatem et cum obcaecati consequuntur quibusdam culpa quia autem tenetur tempore.</p>
-                        </div>
+                            <Card>
+                                <p slot="title">The standard card</p>
+                                <p>Content of card</p>
+                                <p>Content of card</p>
+                                <p>Content of card</p>
+                            </Card>
                     </Col>
                     <Col span="24">
-                        <div class="box-border">
-                            <h2>我们可以提供xxxx</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat vitae illum soluta aperiam inventore, veniam ullam maxime, laboriosam sint voluptatem et cum obcaecati consequuntur quibusdam culpa quia autem tenetur tempore.</p>
-                        </div>
+                        <Card>
+                            <p slot="title">The standard card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                        </Card>
                     </Col>
                 </Row>
-                <Row type="flex" justify="center">
-                    <Col span="6" class="box-border">
-                        <h4>title1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste veniam, harum nisi aut voluptatibus ducimus? Minima perferendis reprehenderit cupiditate rerum a, doloribus numquam expedita voluptates non illum. Eum, harum aut.</p>
+                <Row type="flex" justify="center" style="background: #eee">
+                    <Col span="6" offset="1">
+                        <Card>
+                            <p slot="title">The standard card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                        </Card>
                     </Col>
-                    <Col span="6" class="box-border">
-                        <h4>title1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste veniam, harum nisi aut voluptatibus ducimus? Minima perferendis reprehenderit cupiditate rerum a, doloribus numquam expedita voluptates non illum. Eum, harum aut.</p>
+                    <Col span="6" offset="1">
+                        <Card>
+                            <p slot="title">The standard card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                        </Card>
                     </Col>
-                    <Col span="6" class="box-border">
-                        <h4>title1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste veniam, harum nisi aut voluptatibus ducimus? Minima perferendis reprehenderit cupiditate rerum a, doloribus numquam expedita voluptates non illum. Eum, harum aut.</p>
+                    <Col span="6" offset="1">
+                        <Card>
+                            <p slot="title">The standard card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                            <p>Content of card</p>
+                        </Card>
                     </Col>
                 </Row>
-
             </Content>
             <Footer>
                 footer
@@ -124,10 +140,10 @@ export default {
             logourl: require('../images/logo.png'),
             value2: 0,
             banners:[
-            { url:require('../images/banner_01.jpg'), id:1 },
-            { url:require('../images/banner_02.jpg'), id:2 },
-            { url:require('../images/banner_03.jpg'), id:3 },
-            { url:require('../images/banner_04.jpg'), id:4 }
+            { url:require('../images/banner_01.png'), id:1 },
+            { url:require('../images/banner_02.png'), id:2 },
+            { url:require('../images/banner_03.png'), id:3 },
+            { url:require('../images/banner_04.png'), id:4 }
             ],
             setting: {
                     autoplay: true,
