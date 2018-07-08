@@ -29,7 +29,7 @@ module.exports = merge(webpackBaseConfig, {
         new HtmlWebpackPlugin({
             filename: '../index.html',
             template: './src/template/index.ejs',
-            inject: true,
+            inject: false,
             favicon: './src/images/favicon.ico',
         })
     ]

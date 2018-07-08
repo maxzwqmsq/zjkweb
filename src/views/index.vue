@@ -2,50 +2,56 @@
 .box-border{
     border:1px solid #ddd;
 }
+.header{
+    background: #01366A;
+}
+.heder-menu{
+    background: #01366A;
+}
 .top{
-        padding: 10px;
-        background: rgba(0, 153, 229, .7);
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-    }
+    padding: 10px;
+    background: rgba(0, 153, 229, .7);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+}
+.footList a{
+    float: left;
+    display: inline-block;
+    margin-left: 30px;
+    border-right:1px solid #ddd;
+    padding-right: 30px;
+}
+
+
 </style>
 <template>
     <div class="layout">
         <Layout>
-            <Header>
-                <Row type="flex" height='90'>
-                    <Col span="8">
+            <Header class="header">
+                <Row type="flex">
+                    <Col span="5" offset="3" justify="center" align="middle">
                         <img :src="logourl" alt="" height='50'>
                     </Col>
-                    <Col span="16">
-                        <Menu mode="horizontal" :theme="theme1" active-name="1" >
+                    <Col span="13" offset="1" justify="center" align="middle">
+                        <Menu class="heder-menu" mode="horizontal" :theme="theme1" active-name="1" >
                             <MenuItem name="1">
-                                <Icon type="ios-paper"></Icon>
                                 首页
                             </MenuItem>
-                            <MenuItem name="2">
-                                <Icon type="ios-people"></Icon>
-                                产品与案例
+                             <MenuItem name="2">
+                                关于我们
                             </MenuItem>
-                            <Submenu name="3">
-                                <template slot="title">
-                                    <Icon type="stats-bars"></Icon>
-                                    关于我们
-                                </template>
-                                <MenuGroup title="使用">
-                                    <MenuItem name="3-1">新增和启动</MenuItem>
-                                    <MenuItem name="3-2">活跃分析</MenuItem>
-                                    <MenuItem name="3-3">时段分析</MenuItem>
-                                </MenuGroup>
-                                <MenuGroup title="留存">
-                                    <MenuItem name="3-4">用户留存</MenuItem>
-                                    <MenuItem name="3-5">流失用户</MenuItem>
-                                </MenuGroup>
-                            </Submenu>
+                             <MenuItem name="3">
+                                产品与方案
+                            </MenuItem>
                             <MenuItem name="4">
-                                <Icon type="settings"></Icon>
                                 新闻中心
+                            </MenuItem>
+                            <MenuItem name="5">
+                                投资者关系
+                            </MenuItem>
+                            <MenuItem name="6">             
+                                招贤纳士
                             </MenuItem>
                         </Menu>
                     </Col>
@@ -123,12 +129,28 @@
                     </Col>
                 </Row>
             </Content>
-            <Footer>
-                footer
+            <Footer class="header">
+                <Row type="flex" justify="center" style="margin-top:30px;">
+                    <Col span="17" offset="7" class="footList">
+                        <a href="">关于我们</a>
+                        <a href="">产品与方案</a>
+                        <a href="">新闻中心</a>
+                        <a href="">投资者关系</a>
+                        <a href="">招贤纳士</a>
+                    </Col>
+                </Row>
+                <Row type="flex" justify="center" style="margin-top:30px;">
+                    <Col span="3">
+                       <a href="">版权所有: 123456</a>
+                    </Col>
+                    <Col span="3">
+                        <a href="">备案号: 123456</a>
+                    </Col>
+                </Row>
             </Footer>
-                <BackTop :height="100" :bottom="50">
-                        <div class="top">返回顶端</div>
-                </BackTop>
+            <BackTop :height="100" :bottom="50">
+                    <div class="top">返回顶端</div>
+            </BackTop>
         </Layout>
     </div>
 </template>
@@ -136,7 +158,7 @@
 export default {
     data() {
         return {
-            theme1: 'light',
+            theme1: 'primary',
             logourl: require('../images/logo.png'),
             value2: 0,
             banners:[
