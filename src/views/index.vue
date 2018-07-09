@@ -36,13 +36,13 @@
                     <Col span="13" offset="1" justify="center" align="middle">
                         <Menu class="heder-menu" mode="horizontal" :theme="theme1" active-name="1" >
                             <MenuItem name="1">
-                                首页
+                                <router-link to="/home">首页</router-link>
                             </MenuItem>
                              <MenuItem name="2">
-                                关于我们
+                                <router-link to="/ours">关于我们</router-link>
                             </MenuItem>
                              <MenuItem name="3">
-                                产品与方案
+                                <router-link to="/app">产品与方案</router-link>
                             </MenuItem>
                             <MenuItem name="4">
                                 新闻中心
@@ -128,6 +128,7 @@
                         </Card>
                     </Col>
                 </Row>
+                <router-view></router-view>
             </Content>
             <Footer class="header">
                 <Row type="flex" justify="center" style="margin-top:30px;">
@@ -155,7 +156,10 @@
     </div>
 </template>
 <script>
+import Ours from './ours';
+import Home from './home';
 export default {
+    Ours,Home,
     data() {
         return {
             theme1: 'primary',
