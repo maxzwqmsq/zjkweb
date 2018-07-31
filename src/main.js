@@ -1,36 +1,28 @@
-import Vue from 'vue';
-import iView from 'iview';
-import VueRouter from 'vue-router';
-import Routers from './router';
-import Util from './libs/util';
-import App from './app.vue';
-import 'iview/dist/styles/iview.css';
-// import Ours from './views/ours.vue';
-// import Home from './views/home.vue';
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from 'vue'
+import routes from './routes'
 
-Vue.use(VueRouter);
-Vue.use(iView);
+Vue.config.productionTip = false
 
-// 路由配置
-const RouterConfig = {
-    mode: 'history',
-    routes: routes
-};
-const router = new VueRouter(RouterConfig);
+const app = new Vue({
+  el: '#app',
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent () {
+      const matchingView = routes[this.currentRoute]
+      return matchingView
+        ? require('./pages/' + matchingView + '.vue')
+        : require('./pages/404.vue')
+    }
+  },
+  render (h) {
+    return h(this.ViewComponent)
+  }
+})
 
-router.beforeEach((to, from, next) => {
-    iView.LoadingBar.start();
-    Util.title(to.meta.title);
-    next();
-});
-
-router.afterEach((to, from, next) => {
-    iView.LoadingBar.finish();
-    window.scrollTo(0, 0);
-});
-
-new Vue({
-    el: '#app',
-    router: router,
-    render: h => h(App)
-});
+window.addEventListener('popstate', () => {
+  app.currentRoute = window.location.pathname
+})
